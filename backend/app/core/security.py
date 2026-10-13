@@ -74,42 +74,49 @@ def wrap_sandboxed_document(title: str, content_html: str) -> str:
   <title>{title}</title>
   <style>
     :root {{
-      color-scheme: dark;
+      color-scheme: light;
     }}
     body {{
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: #e2e8f0;
-      background-color: #0f172a;
+      line-height: 1.7;
+      color: #0f172a;
+      background-color: #ffffff;
       margin: 0;
-      padding: 24px;
+      padding: 32px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }}
     h1, h2, h3, h4 {{
-      color: #f8fafc;
+      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      color: #0f172a;
       font-weight: 700;
-      margin-top: 1.5em;
+      margin-top: 1.6em;
       margin-bottom: 0.5em;
     }}
-    h1 {{ font-size: 1.85rem; border-bottom: 1px solid #334155; padding-bottom: 8px; }}
-    h2 {{ font-size: 1.45rem; color: #10b981; }}
-    h3 {{ font-size: 1.2rem; color: #38bdf8; }}
-    p {{ margin-bottom: 1em; color: #cbd5e1; }}
-    strong {{ color: #ffffff; }}
-    ul, ol {{ padding-left: 24px; margin-bottom: 1em; }}
-    li {{ margin-bottom: 0.4em; }}
+    h1 {{ font-size: 2rem; border-bottom: 2px solid #ea580c; padding-bottom: 12px; }}
+    h2 {{ font-size: 1.5rem; color: #c2410c; }}
+    h3 {{ font-size: 1.25rem; color: #1e293b; }}
+    p {{ margin-bottom: 1.2em; color: #334155; font-size: 1.05rem; }}
+    strong {{ color: #0f172a; }}
+    ul, ol {{ padding-left: 24px; margin-bottom: 1.2em; color: #334155; }}
+    li {{ margin-bottom: 0.5em; }}
     blockquote {{
-      border-left: 4px solid #10b981;
-      margin: 1em 0;
-      padding: 8px 16px;
-      background: #1e293b;
-      border-radius: 0 4px 4px 0;
+      border-left: 3px solid #ea580c;
+      margin: 1.5em 0;
+      padding: 12px 20px;
+      background: #fff7ed;
+      color: #7c2d12;
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
     }}
     .takeaway-card {{
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(99, 102, 241, 0.1));
-      border: 1px solid #10b981;
-      padding: 16px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-left: 4px solid #ea580c;
+      padding: 20px;
       border-radius: 8px;
-      margin-top: 24px;
+      margin-top: 32px;
     }}
   </style>
 </head>

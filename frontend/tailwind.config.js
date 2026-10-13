@@ -4,55 +4,29 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        heading: ['Outfit', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        serif: ['Newsreader', 'Georgia', 'Cambria', 'serif'],
+        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
-        obsidian: {
-          950: '#040508',
-          900: '#06080d',
-          850: '#0a0d15',
-          800: '#0f1422',
-          700: '#171f33',
-          600: '#222d47',
-        },
-        aurora: {
-          emerald: '#10b981',
-          mint: '#34d399',
-          jade: '#059669',
-          cyan: '#06b6d4',
-          indigo: '#6366f1',
-          violet: '#8b5cf6',
-          fuchsia: '#d946ef',
+        lenny: {
+          orange: '#ea580c',
+          terracotta: '#c2410c',
+          warm: '#fff7ed',
+          border: '#e2e8f0',
+          paper: '#ffffff',
+          cream: '#fcfbf9',
+          ink: '#0f172a',
+          muted: '#64748b',
         }
       },
       boxShadow: {
-        'glow-emerald': '0 0 35px -5px rgba(16, 185, 129, 0.25)',
-        'glow-indigo': '0 0 35px -5px rgba(99, 102, 241, 0.25)',
-        'glow-glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
-        'inner-glow': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.1)',
-      },
-      animation: {
-        'soundwave-1': 'soundwave 1.2s ease-in-out infinite 0.1s',
-        'soundwave-2': 'soundwave 1.2s ease-in-out infinite 0.3s',
-        'soundwave-3': 'soundwave 1.2s ease-in-out infinite 0.2s',
-        'soundwave-4': 'soundwave 1.2s ease-in-out infinite 0.4s',
-        'aurora-glow': 'aurora 8s ease infinite alternate',
-      },
-      keyframes: {
-        soundwave: {
-          '0%, 100%': { height: '4px' },
-          '50%': { height: '16px' },
-        },
-        aurora: {
-          '0%': { opacity: '0.4', transform: 'scale(1) rotate(0deg)' },
-          '100%': { opacity: '0.8', transform: 'scale(1.1) rotate(5deg)' },
-        }
+        'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.04)',
+        'dock': '0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)',
       }
     },
   },

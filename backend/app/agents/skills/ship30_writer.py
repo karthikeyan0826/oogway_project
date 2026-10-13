@@ -46,26 +46,26 @@ class Ship30Essay:
 <article class="ship30-essay">
   <header>
     <h1>{self.title}</h1>
-    <p class="subtitle" style="color: #94a3b8; font-style: italic;">
+    <p class="subtitle" style="color: #64748b; font-style: italic; font-size: 0.95rem;">
       A Ship 30 for 30 Atomic Essay grounded in insights from {self.guest} [{self.guest} - {self.episode_title}]
     </p>
   </header>
   
-  <section class="hook-section" style="margin: 20px 0; padding: 16px; background: rgba(16, 185, 129, 0.08); border-left: 4px solid #10b981; border-radius: 4px;">
-    <h3 style="margin-top: 0; color: #10b981;">The Hook</h3>
-    <p style="font-size: 1.1rem; line-height: 1.6; font-weight: 500;">{self.hook}</p>
+  <section class="hook-section" style="margin: 24px 0; padding: 18px; background: #fff7ed; border-left: 4px solid #ea580c; border-radius: 6px;">
+    <h3 style="margin-top: 0; color: #c2410c; font-family: Georgia, serif;">The Hook</h3>
+    <p style="font-size: 1.1rem; line-height: 1.6; font-weight: 500; color: #7c2d12; margin-bottom: 0;">{self.hook}</p>
   </section>
 
-  <div class="narrative-body">
+  <div class="narrative-body" style="font-size: 1.05rem; line-height: 1.7; color: #1e293b;">
     {self.narrative_markdown.replace(chr(10) + chr(10), "</p><p>")}
   </div>
 
   <section class="takeaway-card">
-    <h3 style="color: #38bdf8; margin-top: 0;">The Single Tactical Takeaway</h3>
-    <p style="font-size: 1.15rem; font-weight: 600; color: #ffffff;">{self.tactical_takeaway}</p>
+    <h3 style="color: #c2410c; margin-top: 0; font-family: Georgia, serif;">The Single Tactical Takeaway</h3>
+    <p style="font-size: 1.15rem; font-weight: 600; color: #0f172a; margin-bottom: 0;">{self.tactical_takeaway}</p>
   </section>
   
-  <footer style="margin-top: 32px; border-top: 1px solid #334155; padding-top: 12px; font-size: 0.85rem; color: #64748b;">
+  <footer style="margin-top: 36px; border-top: 1px solid #e2e8f0; padding-top: 14px; font-size: 0.85rem; color: #94a3b8; font-family: sans-serif;">
     Word Count: ~{self.word_count} words | Verified Source: [{self.guest} - {self.episode_title}]
   </footer>
 </article>
