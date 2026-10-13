@@ -34,8 +34,8 @@ export const App: React.FC = () => {
   const currentSession = sessions.find((s) => s.id === activeSessionId);
 
   return (
-    <div className="flex h-screen w-screen bg-[#0b0f19] text-slate-100 overflow-hidden font-sans">
-      {/* 1. Left Session Sidebar */}
+    <div className="flex h-screen w-screen bg-obsidian-950 text-slate-100 overflow-hidden font-sans selection:bg-emerald-500 selection:text-obsidian-950">
+      {/* 1. Left Intelligence Sidebar */}
       {isSidebarOpen && (
         <SessionSidebar
           sessions={sessions}
@@ -46,29 +46,34 @@ export const App: React.FC = () => {
         />
       )}
 
-      {/* 2. Main Workspace (Chat + Artifacts Split Pane) */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden min-w-0">
-        {/* Top Workspace Header Bar */}
-        <header className="h-14 px-4 bg-slate-950/90 border-b border-slate-800 flex items-center justify-between shrink-0 z-10">
+      {/* 2. Main Executive Workspace */}
+      <div className="flex-1 flex flex-col h-full overflow-hidden min-w-0 bg-obsidian-900">
+        {/* Top Executive Header Bar */}
+        <header className="h-14 px-4 md:px-6 bg-obsidian-950/80 backdrop-blur-xl border-b border-white/[0.06] flex items-center justify-between shrink-0 z-20">
           <div className="flex items-center gap-3 overflow-hidden">
             <button
               type="button"
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"
+              className="p-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] text-slate-400 hover:text-white border border-white/[0.04] transition-all"
               title="Toggle Sidebar"
             >
               <Menu className="w-4 h-4" />
             </button>
+
             <div className="flex items-center gap-2 overflow-hidden">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 ring-4 ring-emerald-950/80 shrink-0" />
-              <h2 className="text-xs font-semibold text-slate-200 truncate" title={currentSession?.title || 'New Session'}>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+
+              <h2 className="text-xs font-bold font-heading text-slate-200 truncate tracking-tight" title={currentSession?.title || 'Lenny Growth Copilot'}>
                 {currentSession?.title || 'Lenny Growth Copilot'}
               </h2>
             </div>
           </div>
 
           <div className="flex items-center gap-2.5">
-            {/* Dynamic LLM Provider Selector */}
+            {/* Dynamic Runtime Model Switcher */}
             <ModelSelector
               providers={providers}
               selectedProvider={selectedProvider}
@@ -79,39 +84,41 @@ export const App: React.FC = () => {
               }}
             />
 
-            {/* Artifact Pane Toggle Button */}
+            {/* Split Canvas Workspace Toggle */}
             <button
               type="button"
               onClick={() => setIsArtifactPaneOpen(!isArtifactPaneOpen)}
-              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium border transition-all ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-heading font-semibold border transition-all ${
                 isArtifactPaneOpen
-                  ? 'bg-slate-800 text-emerald-300 border-slate-700'
-                  : 'bg-slate-900 text-slate-400 hover:text-white border-slate-800'
+                  ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-300 shadow-glow-emerald'
+                  : 'glass-pill text-slate-400 hover:text-slate-200'
               }`}
-              title="Toggle Artifact Viewer"
+              title="Toggle Studio Canvas"
             >
               {isArtifactPaneOpen ? (
                 <PanelRightClose className="w-3.5 h-3.5 text-emerald-400" />
               ) : (
                 <PanelRightOpen className="w-3.5 h-3.5" />
               )}
-              <span className="hidden sm:inline">Artifacts</span>
-              {activeArtifact && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />}
+              <span className="hidden sm:inline">Studio Canvas</span>
+              {activeArtifact && (
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              )}
             </button>
           </div>
         </header>
 
-        {/* Global Error Banner */}
+        {/* Floating Toast Error Banner */}
         {error && (
-          <div className="bg-rose-500/15 border-b border-rose-500/30 px-4 py-2 flex items-center justify-between text-xs text-rose-300">
-            <div className="flex items-center gap-2">
+          <div className="mx-4 mt-2 p-3 rounded-xl bg-rose-950/40 border border-rose-500/40 flex items-center justify-between text-xs text-rose-300 shadow-lg animate-in fade-in duration-150">
+            <div className="flex items-center gap-2.5">
               <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
               <span>{error}</span>
             </div>
             <button
               type="button"
               onClick={clearError}
-              className="text-rose-400 hover:text-rose-200 text-[11px] underline ml-2"
+              className="text-[11px] font-mono px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 hover:bg-rose-500/30 transition-colors"
             >
               Dismiss
             </button>
@@ -119,8 +126,8 @@ export const App: React.FC = () => {
         )}
 
         {/* Dual-Pane Viewport Container */}
-        <main className="flex-1 flex overflow-hidden">
-          {/* Left / Middle: Chat Interface Pane */}
+        <main className="flex-1 flex overflow-hidden relative">
+          {/* Left/Middle Pane: Chat Stream */}
           <div className="flex-1 h-full min-w-0">
             <ChatInterface
               messages={messages}
@@ -135,9 +142,9 @@ export const App: React.FC = () => {
             />
           </div>
 
-          {/* Right: In-App Artifact Viewer (Claude Split-Pane) */}
+          {/* Right Pane: Sandboxed Studio Artifact Viewer */}
           {isArtifactPaneOpen && (
-            <div className="w-full md:w-[48%] lg:w-[45%] h-full shrink-0">
+            <div className="w-full md:w-[48%] lg:w-[46%] h-full shrink-0 animate-in slide-in-from-right-4 duration-200">
               <ArtifactViewer
                 artifact={activeArtifact}
                 onClose={() => setIsArtifactPaneOpen(false)}
