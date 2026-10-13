@@ -77,46 +77,55 @@ def wrap_sandboxed_document(title: str, content_html: str) -> str:
       color-scheme: light;
     }}
     body {{
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.7;
-      color: #0f172a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.8;
+      color: #27272a;
       background-color: #ffffff;
       margin: 0;
-      padding: 32px;
-      max-width: 720px;
+      padding: 40px 32px;
+      max-width: 740px;
       margin-left: auto;
       margin-right: auto;
     }}
     h1, h2, h3, h4 {{
-      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-      color: #0f172a;
-      font-weight: 700;
-      margin-top: 1.6em;
+      font-family: "Newsreader", Charter, "Bitstream Charter", Georgia, Cambria, serif;
+      color: #18181b;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin-top: 1.8em;
       margin-bottom: 0.5em;
     }}
-    h1 {{ font-size: 2rem; border-bottom: 2px solid #ea580c; padding-bottom: 12px; }}
-    h2 {{ font-size: 1.5rem; color: #c2410c; }}
-    h3 {{ font-size: 1.25rem; color: #1e293b; }}
-    p {{ margin-bottom: 1.2em; color: #334155; font-size: 1.05rem; }}
-    strong {{ color: #0f172a; }}
-    ul, ol {{ padding-left: 24px; margin-bottom: 1.2em; color: #334155; }}
-    li {{ margin-bottom: 0.5em; }}
+    h1 {{ 
+      font-size: 2.15rem; 
+      line-height: 1.25; 
+      border-bottom: 1px solid #e7e5e4; 
+      padding-bottom: 16px; 
+      margin-top: 0.5em;
+    }}
+    h2 {{ font-size: 1.45rem; color: #1c1917; }}
+    h3 {{ font-size: 1.2rem; color: #292524; }}
+    p {{ margin-bottom: 1.3em; color: #27272a; font-size: 1.05rem; }}
+    strong {{ color: #18181b; font-weight: 600; }}
+    ul, ol {{ padding-left: 24px; margin-bottom: 1.3em; color: #27272a; }}
+    li {{ margin-bottom: 0.5em; line-height: 1.7; }}
     blockquote {{
-      border-left: 3px solid #ea580c;
-      margin: 1.5em 0;
-      padding: 12px 20px;
-      background: #fff7ed;
-      color: #7c2d12;
+      border-left: 3px solid #292524;
+      margin: 1.8em 0;
+      padding: 14px 22px;
+      background: #fafaf9;
+      color: #292524;
       border-radius: 0 6px 6px 0;
+      font-family: "Newsreader", Georgia, serif;
       font-style: italic;
+      font-size: 1.08rem;
     }}
     .takeaway-card {{
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      border-left: 4px solid #ea580c;
-      padding: 20px;
+      background: #fafaf9;
+      border: 1px solid #e7e5e4;
+      border-left: 4px solid #1c1917;
+      padding: 22px 24px;
       border-radius: 8px;
-      margin-top: 32px;
+      margin-top: 36px;
     }}
   </style>
 </head>

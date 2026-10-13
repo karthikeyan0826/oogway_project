@@ -3,70 +3,81 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  html, body {
     background-color: #ffffff;
-    color: #0f172a;
+    color: #18181b;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  h1, h2, h3, h4 {
-    font-family: 'Newsreader', Georgia, serif;
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Newsreader', Georgia, Cambria, serif;
     letter-spacing: -0.015em;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
+
   code, pre {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
   }
 }
 
-/* Editorial Paper Utilities */
-.editorial-canvas {
+/* Bespoke Editorial Paper Utility Classes */
+.paper-canvas {
   background-color: #ffffff;
 }
 
-.editorial-sidebar {
-  background-color: #fbfbfd;
-  border-right: 1px solid #e5e7eb;
+.paper-sidebar {
+  background-color: #fafaf9;
+  border-right: 1px solid #e7e5e4;
 }
 
-.editorial-card {
+.paper-card {
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid #e7e5e4;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
 }
 
-.editorial-card:hover {
-  border-color: #d1d5db;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+.paper-card:hover {
+  border-color: #d6d3d1;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
 }
 
-.editorial-pill {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
+.paper-pill {
+  background-color: #f5f5f4;
+  border: 1px solid #e7e5e4;
+  color: #44403c;
 }
 
-.editorial-pill:hover {
-  background-color: #f1f5f9;
-  border-color: #cbd5e1;
+.paper-pill:hover {
+  background-color: #e7e5e4;
+  color: #1c1917;
 }
 
-.editorial-dock {
+.paper-input {
   background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  border: 1px solid #d6d3d1;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
 }
 
-/* Clean Minimal Scrollbars */
+.paper-input:focus-within {
+  border-color: #292524;
+  box-shadow: 0 0 0 1px #292524;
+}
+
+/* Subtle, Elegant Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #d6d3d1;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #a8a29e;
 }
+

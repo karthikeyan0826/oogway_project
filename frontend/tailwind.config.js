@@ -12,23 +12,32 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
-        lenny: {
-          orange: '#ea580c',
-          terracotta: '#c2410c',
-          warm: '#fff7ed',
-          border: '#e2e8f0',
-          paper: '#ffffff',
-          cream: '#fcfbf9',
-          ink: '#0f172a',
-          muted: '#64748b',
+        paper: {
+          50: '#ffffff',
+          100: '#fafaf9',
+          200: '#f5f5f4',
+          300: '#e7e5e4',
+          400: '#d6d3d1',
+          500: '#a8a29e',
+          600: '#78716c',
+          700: '#57534e',
+          800: '#292524',
+          900: '#1c1917',
+        },
+        ink: {
+          primary: '#18181b',
+          secondary: '#3f3f46',
+          muted: '#71717a',
+          faint: '#a1a1aa',
         }
       },
       boxShadow: {
-        'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
-        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.04)',
-        'dock': '0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)',
+        'subtle': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.02)',
+        'elevated': '0 4px 16px -2px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.03)',
       }
     },
   },
   plugins: [],
 }
+

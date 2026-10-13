@@ -34,7 +34,7 @@ export const App: React.FC = () => {
   const currentSession = sessions.find((s) => s.id === activeSessionId);
 
   return (
-    <div className="flex h-screen w-screen bg-white text-slate-900 overflow-hidden font-sans selection:bg-orange-100 selection:text-orange-900">
+    <div className="flex h-screen w-screen bg-white text-stone-900 overflow-hidden font-sans selection:bg-stone-200 selection:text-stone-900">
       {/* 1. Left Session Sidebar */}
       {isSidebarOpen && (
         <SessionSidebar
@@ -49,21 +49,21 @@ export const App: React.FC = () => {
       {/* 2. Main Executive Workspace */}
       <div className="flex-1 flex flex-col h-full overflow-hidden min-w-0 bg-white">
         {/* Top Header Bar */}
-        <header className="h-14 px-4 md:px-6 bg-white border-b border-slate-200 flex items-center justify-between shrink-0 z-20">
+        <header className="h-14 px-4 md:px-6 bg-white border-b border-stone-200 flex items-center justify-between shrink-0 z-20">
           <div className="flex items-center gap-3 overflow-hidden">
             <button
               type="button"
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="p-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200 transition-colors"
+              className="p-1.5 rounded-lg bg-stone-50 hover:bg-stone-100 text-stone-600 hover:text-stone-900 border border-stone-200 transition-colors"
               title="Toggle Sidebar"
             >
               <Menu className="w-4 h-4" />
             </button>
 
             <div className="flex items-center gap-2 overflow-hidden">
-              <span className="w-2 h-2 rounded-full bg-orange-600 shrink-0" />
-              <h2 className="text-xs font-semibold font-serif text-slate-800 truncate" title={currentSession?.title || 'Lenny Growth Copilot'}>
-                {currentSession?.title || 'Lenny\'s Growth Copilot'}
+              <span className="w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
+              <h2 className="text-xs font-semibold font-serif text-stone-800 tracking-tight truncate" title={currentSession?.title || 'Lenny Growth Copilot'}>
+                {currentSession?.title || "Lenny's Growth Assistant"}
               </h2>
             </div>
           </div>
@@ -86,19 +86,19 @@ export const App: React.FC = () => {
               onClick={() => setIsArtifactPaneOpen(!isArtifactPaneOpen)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
                 isArtifactPaneOpen
-                  ? 'bg-slate-100 border-slate-300 text-slate-900 font-semibold'
-                  : 'bg-white hover:bg-slate-50 text-slate-600 border-slate-200'
+                  ? 'bg-stone-900 text-white border-stone-900 font-medium'
+                  : 'bg-white hover:bg-stone-50 text-stone-700 border-stone-200'
               }`}
               title="Toggle Canvas"
             >
               {isArtifactPaneOpen ? (
-                <PanelRightClose className="w-3.5 h-3.5 text-orange-600" />
+                <PanelRightClose className="w-3.5 h-3.5" />
               ) : (
                 <PanelRightOpen className="w-3.5 h-3.5" />
               )}
               <span className="hidden sm:inline">Canvas</span>
-              {activeArtifact && (
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />
+              {activeArtifact && !isArtifactPaneOpen && (
+                <span className="w-1.5 h-1.5 rounded-full bg-stone-400" />
               )}
             </button>
           </div>

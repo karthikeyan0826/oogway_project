@@ -27,32 +27,32 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
   const isLocal = selectedProvider === 'ollama';
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left font-sans">
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-xs font-medium text-slate-800 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white hover:bg-stone-50 border border-stone-200 hover:border-stone-300 text-xs font-medium text-stone-800 shadow-xs transition-all focus:outline-none focus:ring-1 focus:ring-stone-400"
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
         <div className="flex items-center gap-1.5">
           {isLocal ? (
-            <span className="flex items-center gap-1 text-slate-700 font-semibold">
-              <Laptop className="w-3.5 h-3.5 text-emerald-600" />
+            <span className="flex items-center gap-1 text-stone-700 font-medium">
+              <Laptop className="w-3.5 h-3.5 text-stone-500" />
               <span>{currentProvider.name.split(' ')[0]}</span>
             </span>
           ) : (
-            <span className="flex items-center gap-1 text-slate-700 font-semibold">
-              <Globe className="w-3.5 h-3.5 text-indigo-600" />
+            <span className="flex items-center gap-1 text-stone-700 font-medium">
+              <Globe className="w-3.5 h-3.5 text-stone-500" />
               <span>{currentProvider.name.split(' ')[0]}</span>
             </span>
           )}
-          <span className="text-[11px] text-slate-500 font-mono bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
+          <span className="text-[11px] text-stone-600 font-mono bg-stone-100 px-1.5 py-0.5 rounded border border-stone-200">
             {selectedModel}
           </span>
         </div>
 
-        <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-150 ${isOpen ? 'rotate-180 text-slate-600' : ''}`} />
+        <ChevronDown className={`w-3.5 h-3.5 text-stone-400 transition-transform duration-150 ${isOpen ? 'rotate-180 text-stone-600' : ''}`} />
       </button>
 
       {isOpen && (
@@ -61,13 +61,13 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-72 rounded-xl bg-white border border-slate-200 shadow-xl z-50 overflow-hidden divide-y divide-slate-100">
+          <div className="absolute right-0 mt-2 w-72 rounded-xl bg-white border border-stone-200 shadow-elevated z-50 overflow-hidden divide-y divide-stone-100">
             {/* Header */}
-            <div className="px-3.5 py-2.5 bg-slate-50/80 flex items-center justify-between">
-              <span className="text-xs font-semibold text-slate-700">
+            <div className="px-3.5 py-2.5 bg-stone-50 flex items-center justify-between">
+              <span className="text-xs font-semibold text-stone-700">
                 Model Settings
               </span>
-              <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-medium border border-emerald-200">
+              <span className="text-[10px] text-stone-700 bg-stone-200/70 px-2 py-0.5 rounded font-mono border border-stone-300">
                 Active Runtime
               </span>
             </div>
@@ -81,29 +81,29 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
                     key={prov.id}
                     className={`p-2 rounded-lg border transition-colors ${
                       isProvSelected
-                        ? 'bg-orange-50/40 border-orange-200'
-                        : 'bg-white border-transparent hover:bg-slate-50'
+                        ? 'bg-stone-50 border-stone-300'
+                        : 'bg-white border-transparent hover:bg-stone-50'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
                       <div className="flex items-center gap-1.5">
                         {prov.id === 'ollama' ? (
-                          <Laptop className="w-3.5 h-3.5 text-emerald-600" />
+                          <Laptop className="w-3.5 h-3.5 text-stone-500" />
                         ) : (
-                          <Globe className="w-3.5 h-3.5 text-indigo-600" />
+                          <Globe className="w-3.5 h-3.5 text-stone-500" />
                         )}
-                        <span className="text-xs font-semibold text-slate-800">{prov.name}</span>
+                        <span className="text-xs font-semibold text-stone-800">{prov.name}</span>
                       </div>
 
                       {prov.id === 'ollama' ? (
-                        <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-100/60 text-emerald-800">
+                        <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-stone-200 text-stone-700">
                           Local Private
                         </span>
                       ) : (
                         <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded ${
                           prov.is_available
-                            ? 'bg-indigo-100/60 text-indigo-800'
-                            : 'bg-slate-100 text-slate-500'
+                            ? 'bg-stone-200 text-stone-700'
+                            : 'bg-stone-100 text-stone-500'
                         }`}>
                           {prov.is_available ? 'Configured' : 'Optional Key'}
                         </span>
@@ -124,8 +124,8 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
                             }}
                             className={`flex items-center justify-between px-2 py-1 rounded text-[11px] font-mono transition-colors ${
                               isModelActive
-                                ? 'bg-orange-600 text-white font-medium shadow-sm'
-                                : 'bg-slate-50 text-slate-600 hover:bg-slate-100 hover:text-slate-900 border border-slate-200/60'
+                                ? 'bg-stone-900 text-white font-medium shadow-xs'
+                                : 'bg-stone-50 text-stone-600 hover:bg-stone-100 hover:text-stone-900 border border-stone-200/80'
                             }`}
                           >
                             <span className="truncate">{modelId}</span>

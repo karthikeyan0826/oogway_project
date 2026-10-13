@@ -14,19 +14,19 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({ artifact, onClos
 
   if (!artifact) {
     return (
-      <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-[#fafafa] text-slate-500 border-l border-slate-200 relative overflow-hidden">
-        <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 mb-3 shadow-sm">
-          <FileText className="w-6 h-6 text-orange-600" />
+      <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-white text-stone-500 border-l border-stone-200 relative overflow-hidden font-sans">
+        <div className="w-12 h-12 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-center text-stone-600 mb-3 shadow-xs">
+          <FileText className="w-5 h-5 text-stone-700" />
         </div>
-        <h3 className="text-sm font-bold font-serif text-slate-800 mb-1">
-          Canvas Pane Ready
+        <h3 className="text-sm font-semibold font-serif text-stone-800 mb-1">
+          Canvas Workspace Ready
         </h3>
-        <p className="text-xs text-slate-500 max-w-xs leading-relaxed font-sans">
-          Generated essays, framework diagrams, and product briefs will render beside the chat window.
+        <p className="text-xs text-stone-500 max-w-xs leading-relaxed">
+          Generated atomic essays, frameworks, and strategic product memos will render in this clean document canvas.
         </p>
 
-        <div className="mt-5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] text-slate-500 font-mono">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+        <div className="mt-5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-50 border border-stone-200 text-[10px] text-stone-500 font-mono">
+          <ShieldCheck className="w-3.5 h-3.5 text-stone-500" />
           <span>IFrame Isolation Sandbox</span>
         </div>
       </div>
@@ -52,22 +52,22 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({ artifact, onClos
 
   return (
     <div
-      className={`h-full flex flex-col bg-[#fafafa] border-l border-slate-200 transition-all duration-200 z-30 ${
-        isExpanded ? 'fixed inset-y-0 right-0 z-50 w-full md:w-3/4 shadow-2xl' : 'w-full'
+      className={`h-full flex flex-col bg-white border-l border-stone-200 transition-all duration-200 z-30 font-sans ${
+        isExpanded ? 'fixed inset-y-0 right-0 z-50 w-full md:w-3/4 shadow-elevated' : 'w-full'
       }`}
     >
       {/* Studio Header Bar */}
-      <div className="h-14 px-4 bg-white border-b border-slate-200 flex items-center justify-between shrink-0">
+      <div className="h-14 px-4 bg-white border-b border-stone-200 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2.5 overflow-hidden">
-          <div className="w-7 h-7 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-700 shrink-0">
+          <div className="w-7 h-7 rounded-lg bg-stone-100 border border-stone-200 flex items-center justify-center text-stone-700 shrink-0">
             <FileText className="w-4 h-4" />
           </div>
 
           <div className="overflow-hidden">
-            <h2 className="text-xs font-bold font-serif text-slate-900 truncate" title={artifact.title}>
+            <h2 className="text-xs font-semibold font-serif text-stone-900 truncate tracking-tight" title={artifact.title}>
               {artifact.title}
             </h2>
-            <div className="text-[10px] text-slate-400 font-mono uppercase">
+            <div className="text-[10px] text-stone-400 font-mono uppercase tracking-wider">
               {artifact.type} deliverable
             </div>
           </div>
@@ -76,14 +76,14 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({ artifact, onClos
         {/* Action Controls & Tab Switcher */}
         <div className="flex items-center gap-1.5 shrink-0">
           {/* Tabs */}
-          <div className="flex items-center bg-slate-100 rounded-lg p-0.5 border border-slate-200">
+          <div className="flex items-center bg-stone-100 rounded-lg p-0.5 border border-stone-200">
             <button
               type="button"
               onClick={() => setActiveTab('preview')}
               className={`flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium transition-colors ${
                 activeTab === 'preview'
-                  ? 'bg-white text-slate-900 shadow-sm font-semibold'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-white text-stone-900 shadow-xs font-semibold'
+                  : 'text-stone-600 hover:text-stone-900'
               }`}
             >
               <Eye className="w-3.5 h-3.5" />
@@ -94,8 +94,8 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({ artifact, onClos
               onClick={() => setActiveTab('code')}
               className={`flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium transition-colors ${
                 activeTab === 'code'
-                  ? 'bg-white text-slate-900 shadow-sm font-semibold'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-white text-stone-900 shadow-xs font-semibold'
+                  : 'text-stone-600 hover:text-stone-900'
               }`}
             >
               <Code className="w-3.5 h-3.5" />
@@ -107,17 +107,17 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({ artifact, onClos
           <button
             type="button"
             onClick={handleCopy}
-            className="p-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-900 border border-slate-200 transition-colors shadow-sm"
+            className="p-1.5 rounded-lg bg-white hover:bg-stone-50 text-stone-600 hover:text-stone-900 border border-stone-200 transition-colors shadow-xs"
             title="Copy to clipboard"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+            {copied ? <Check className="w-3.5 h-3.5 text-stone-900" /> : <Copy className="w-3.5 h-3.5" />}
           </button>
 
           {/* Download */}
           <button
             type="button"
             onClick={handleDownload}
-            className="p-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-900 border border-slate-200 transition-colors shadow-sm"
+            className="p-1.5 rounded-lg bg-white hover:bg-stone-50 text-stone-600 hover:text-stone-900 border border-stone-200 transition-colors shadow-xs"
             title="Download deliverable"
           >
             <Download className="w-3.5 h-3.5" />
@@ -127,7 +127,7 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({ artifact, onClos
           <button
             type="button"
             onClick={() => setIsExpanded(!isExpanded)}
-            className="p-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-900 border border-slate-200 transition-colors hidden md:block shadow-sm"
+            className="p-1.5 rounded-lg bg-white hover:bg-stone-50 text-stone-600 hover:text-stone-900 border border-stone-200 transition-colors hidden md:block shadow-xs"
             title={isExpanded ? 'Collapse' : 'Fullscreen'}
           >
             {isExpanded ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
@@ -137,7 +137,7 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({ artifact, onClos
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-lg bg-white hover:bg-rose-50 text-slate-500 hover:text-rose-600 border border-slate-200 transition-colors shadow-sm"
+            className="p-1.5 rounded-lg bg-white hover:bg-stone-100 text-stone-500 hover:text-stone-900 border border-stone-200 transition-colors shadow-xs"
             title="Close canvas"
           >
             <X className="w-3.5 h-3.5" />
@@ -146,12 +146,12 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({ artifact, onClos
       </div>
 
       {/* Security Status Bar */}
-      <div className="px-4 py-1.5 bg-slate-50 border-b border-slate-200 text-[10px] text-slate-500 flex items-center justify-between">
-        <span className="flex items-center gap-1.5 text-slate-600 font-mono">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+      <div className="px-4 py-1.5 bg-stone-50/80 border-b border-stone-200 text-[10px] text-stone-500 flex items-center justify-between font-mono">
+        <span className="flex items-center gap-1.5 text-stone-600">
+          <ShieldCheck className="w-3.5 h-3.5 text-stone-500" />
           <span>IFrame Isolation: sandbox=&quot;allow-scripts&quot;</span>
         </span>
-        <span className="text-slate-400 font-mono">Zero Parent Origin Access</span>
+        <span className="text-stone-400">Zero Parent Origin Access</span>
       </div>
 
       {/* Canvas Viewport */}
@@ -164,7 +164,7 @@ export const ArtifactViewer: React.FC<ArtifactViewerProps> = ({ artifact, onClos
             className="w-full h-full border-none bg-white"
           />
         ) : (
-          <div className="w-full h-full overflow-auto p-5 bg-slate-50 text-slate-800 font-mono text-xs leading-relaxed border-t border-slate-200">
+          <div className="w-full h-full overflow-auto p-5 bg-stone-50 text-stone-800 font-mono text-xs leading-relaxed border-t border-stone-200">
             <pre className="whitespace-pre-wrap">{artifact.raw_code || artifact.content}</pre>
           </div>
         )}

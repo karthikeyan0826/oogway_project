@@ -46,26 +46,26 @@ class Ship30Essay:
 <article class="ship30-essay">
   <header>
     <h1>{self.title}</h1>
-    <p class="subtitle" style="color: #64748b; font-style: italic; font-size: 0.95rem;">
+    <p class="subtitle" style="color: #71717a; font-style: italic; font-size: 0.95rem; font-family: 'Newsreader', Georgia, serif; margin-top: 6px; margin-bottom: 24px;">
       A Ship 30 for 30 Atomic Essay grounded in insights from {self.guest} [{self.guest} - {self.episode_title}]
     </p>
   </header>
   
-  <section class="hook-section" style="margin: 24px 0; padding: 18px; background: #fff7ed; border-left: 4px solid #ea580c; border-radius: 6px;">
-    <h3 style="margin-top: 0; color: #c2410c; font-family: Georgia, serif;">The Hook</h3>
-    <p style="font-size: 1.1rem; line-height: 1.6; font-weight: 500; color: #7c2d12; margin-bottom: 0;">{self.hook}</p>
+  <section class="hook-section" style="margin: 28px 0; padding: 20px 24px; background: #fafaf9; border: 1px solid #e7e5e4; border-left: 4px solid #1c1917; border-radius: 8px;">
+    <h3 style="margin-top: 0; margin-bottom: 8px; color: #18181b; font-family: 'Newsreader', Georgia, serif; font-size: 1.05rem; font-weight: 600;">The Hook</h3>
+    <p style="font-size: 1.08rem; line-height: 1.7; font-weight: 400; color: #27272a; margin-bottom: 0;">{self.hook}</p>
   </section>
 
-  <div class="narrative-body" style="font-size: 1.05rem; line-height: 1.7; color: #1e293b;">
+  <div class="narrative-body" style="font-size: 1.05rem; line-height: 1.8; color: #27272a;">
     {self.narrative_markdown.replace(chr(10) + chr(10), "</p><p>")}
   </div>
 
-  <section class="takeaway-card">
-    <h3 style="color: #c2410c; margin-top: 0; font-family: Georgia, serif;">The Single Tactical Takeaway</h3>
-    <p style="font-size: 1.15rem; font-weight: 600; color: #0f172a; margin-bottom: 0;">{self.tactical_takeaway}</p>
+  <section class="takeaway-card" style="margin-top: 36px; padding: 22px 24px; background: #fafaf9; border: 1px solid #e7e5e4; border-left: 4px solid #1c1917; border-radius: 8px;">
+    <h3 style="color: #18181b; margin-top: 0; margin-bottom: 8px; font-family: 'Newsreader', Georgia, serif; font-size: 1.1rem; font-weight: 600;">The Single Tactical Takeaway</h3>
+    <p style="font-size: 1.1rem; font-weight: 500; color: #18181b; margin-bottom: 0; line-height: 1.65;">{self.tactical_takeaway}</p>
   </section>
   
-  <footer style="margin-top: 36px; border-top: 1px solid #e2e8f0; padding-top: 14px; font-size: 0.85rem; color: #94a3b8; font-family: sans-serif;">
+  <footer style="margin-top: 40px; border-top: 1px solid #e7e5e4; padding-top: 16px; font-size: 0.85rem; color: #71717a; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
     Word Count: ~{self.word_count} words | Verified Source: [{self.guest} - {self.episode_title}]
   </footer>
 </article>
